@@ -6,3 +6,4 @@ connect('mongodb://localhost/developersApplications', {
 });
 
 module.exports = connection;
+

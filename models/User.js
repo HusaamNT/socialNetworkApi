@@ -28,6 +28,10 @@ const userSchema = new Schema({
       ref: "User",
     },
   ],
+}
+);
+userSchema.virtual("friendsCount").get(function (){
+    return this.friends.length;
 });
 
 const User = mongoose.model("User", userSchema);
