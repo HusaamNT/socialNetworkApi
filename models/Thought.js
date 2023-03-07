@@ -19,9 +19,7 @@ const thoughtsSchema = new Schema({
             return new Date(createdAt).toLocaleString();
         }
       },
-     reactions: { 
-
-      },
+     reactions: [reactionsSchema]
     },
     {
         toJSON:{
