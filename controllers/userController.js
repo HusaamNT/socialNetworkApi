@@ -25,9 +25,11 @@ module.exports = {
   },
   createUser: async function (req, res) {
     try {
+        console.log(req.body)
       const user = User.create(req.body);
       res.json(user);
     } catch (err) {
+        console.log(err)
       res.status(500).json(err);
     }
   },
@@ -42,6 +44,7 @@ module.exports = {
         res.status(404).json({ message: "No user found with this ID!" });
       }
     } catch (err) {
+        console.log(err)
       res.status(500).json(err);
     }
   },
