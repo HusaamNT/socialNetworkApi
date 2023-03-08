@@ -47,11 +47,19 @@ const reactionsSchema = new Schema({
         type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
-      },
-})
+      }
+    },
+      {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        },
+        id: false,
+    }
+  )
 
-thoughtsSchema.virtual('thoughtCount').get(function() {
-  return this.thought.length;
+thoughtsSchema.virtual('reactionsCount').get(function() {
+  return this.reactions.length;
 });
 
 const Thought = mongoose.model('Thought', thoughtsSchema);
