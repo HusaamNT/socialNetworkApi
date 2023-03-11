@@ -36,8 +36,7 @@ const thoughtsSchema = new Schema({
         maxlength: 280
     }, 
     username:{
-        type: String,
-        required: true
+        type: String
     },
     createdAt: {
         type: Date,
